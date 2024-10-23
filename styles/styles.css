@@ -55,6 +55,20 @@ a:hover {
   ); /* внутренний горизонтальный отступ */
 }
 
+/* скрытие элементов */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
 h1,
 h2,
 h3,
@@ -120,7 +134,6 @@ h6 {
 .header-menu-link.is-current::after {
   content: '';
   width: 5px;
-  height: 5px;
   aspect-ratio: 1;
   background-color: currentColor; /* цвет наследуется от класса header-menu-link(селектор a), цвет для всех ссылок указан в селекторе a в верхней части файла */
   border-radius: 50%; /* скругление квадратика, чтобы стал кружок */
@@ -136,12 +149,11 @@ h6 {
   flex-direction: column;
   justify-content: center;
   row-gap: 4px;
-  height: 40px;
   width: 40px;
   aspect-ratio: 1;
   background-color: transparent;
   border: var(--border);
-  border-radius: var(--border-radius);
+  border-radius: 50%; /* для круглыхэлементов верстки надежнее 50% */
   padding-left: 8px;
   color: var(--color-light);
 }
