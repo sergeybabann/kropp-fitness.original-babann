@@ -2,6 +2,20 @@ video url:
 
 https://www.youtube.com/watch?v=AUdW01JQFME&list=PL0MUAHwery4pP3XMpzDIMirWRS28ffD_x
 
+
+#1 - 30.40(десктопная версия шапки готова)
+#1 - 30.44(начинаем делать адаптив)
+
 video stop: 
 
-#2 -  ▶ 01:30​ | Доработка header-burger-button — UX и доступность, класс visually-hidden
+
+
+
+
+
+
+
+
+
+notes
+ - cursor pointer должен быть только на ссылках. Правило хррошего тона.

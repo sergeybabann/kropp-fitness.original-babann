@@ -1,0 +1,202 @@
+:root {
+  --color-dark: #000000;
+  --color-dark-alternate: #131619;
+  --color-light: #ffffff;
+  --color-dark-gray: #404040;
+  --color-light-gray: #c4c4c4;
+
+  --border-radius: 30px;
+  --border: 1px solid var(--color-light);
+
+  --font-family-base: 'Heebo', sans-serif;
+  --font-family-accent: 'Yantramanav', sans-serif;
+
+  --input-height: 54px;
+
+  --container-width: 1300px;
+  --container-padding-x: 15px; /* для горизонтальных внутренних отступов, чтобы при уменьшения ширины экрана контент не слипался с краями */
+  --transition-duration: 0.2s;
+}
+
+body {
+  font-family: var(--font-family-base);
+  color: var(--color-light-gray);
+  background-color: var(--color-dark);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.75; /* 28px */
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(
+    --transition-duration
+  ); /* все дочерние элементы внутри svg */
+}
+
+a {
+  color: var(--color-light); /* цвет для всех ссылок */
+}
+
+a:hover {
+  color: var(--color-light-gray);
+}
+
+.container {
+  max-width: calc(
+    var(--container-width) + var(--container-padding-x) * 2
+  ); /* складываем ширину контентной сетки со значением внутренних горизонтальных отступов умноженное на 2, получаем ограничение ширины контентной сетки в 1300px, которая указана в переменной --container-width */
+  margin-inline: auto; /* центрирование контента */
+  padding-inline: var(
+    --container-padding-x
+  ); /* внутренний горизонтальный отступ */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.button {
+  display: inline-flex; /* это правило позволяет применить свойство высоты height */
+  align-items: center;
+  height: 38px;
+  padding-inline: 26px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 2; /* 24px */
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  white-space: nowrap; /* кнопка будет всегда в одну строку */
+  background-color: var(--color-light);
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+.button:hover {
+  background-color: var(--color-light-gray);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 20px;
+  padding-inline: 32px;
+  background-color: var(--color-dark-alternate);
+}
+
+.header-logo {
+  flex-shrink: 0; /* чтобы logo не сжималось */
+}
+
+.header-menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 50px;
+}
+
+.header-menu-link {
+  display: inline-flex; /* для того, чтобы у ссылок была область нажатия равная 90px (высота указана в этом классе) пишем это правило */
+  align-items: center;
+  column-gap: 7px; /* расстояние от кружочка до пункта навигационного меню HOME */
+  height: 90px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+}
+
+/* класс для кружочка около пункта навигационного меню HOME */
+.header-menu-link.is-current::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  aspect-ratio: 1;
+  background-color: currentColor; /* цвет наследуется от класса header-menu-link(селектор a), цвет для всех ссылок указан в селекторе a в верхней части файла */
+  border-radius: 50%; /* скругление квадратика, чтобы стал кружок */
+}
+
+.header-actions {
+  display: flex; /* кнопки в один ряд */
+  column-gap: 40px;
+}
+
+.header-burger-button {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 4px;
+  height: 40px;
+  width: 40px;
+  aspect-ratio: 1;
+  background-color: transparent;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding-left: 8px;
+  color: var(--color-light);
+}
+
+.header-burger-button:hover {
+  color: var(--color-light-gray);
+  border-color: currentColor;
+}
+
+.header-burger-button-line {
+  width: 6px;
+  height: 1px;
+  background-color: currentColor;
+  box-shadow: 16px 0 0 currentColor;
+}
+
+/*---------- MEDIA QUIRES ----------*/
+
+/*----- 1024 px -----*/
+@media (max-width: 1024px) {
+  .header {
+    flex-wrap: wrap;
+    padding-top: 20px;
+    padding-inline: 20px;
+    row-gap: 10px;
+  }
+  .header-menu {
+    order: 1;
+    flex-basis: 100%;
+  }
+
+  .header-menu-link {
+    height: 50px;
+  }
+}
+
+/*----- 767 px -----*/
+@media (max-width: 767px) {
+  .button {
+    padding-inline: 18px;
+  }
+
+  .header {
+    padding-top: 10px;
+  }
+
+  .header-menu-list {
+    column-gap: 24px;
+  }
+
+  .header-menu-link {
+    height: 32px;
+  }
+
+  .header-actions {
+    column-gap: 15px;
+  }
+}
