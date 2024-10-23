@@ -7,6 +7,7 @@ https://www.youtube.com/watch?v=AUdW01JQFME&list=PL0MUAHwery4pP3XMpzDIMirWRS28ff
 #1 - 30.44(начинаем делать адаптив)
 
 video stop: 
+#1 - 31.51
 
 
 
@@ -18,4 +19,4 @@ video stop:
 
 
 notes
- - cursor pointer должен быть только на ссылках. Правило хррошего тона.
+ - cursor pointer должен быть только на ссылках. Правило хорошего тона.
