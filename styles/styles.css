@@ -188,21 +188,21 @@ h6 {
 .banner-info {
   display: flex;
   align-items: end;
-  font-size: 30px;
-  line-height: 38px;
+  font-size: clamp(16px, 1.56vw, 30px);
+  line-height: 1.27; /* 1.27 */
   font-weight: 700;
 }
 
 .banner-info::before {
   content: '';
-  width: 194px;
+  width: min(10.1vw, 194px);
   aspect-ratio: 1;
   margin-right: 30px;
   background: url('../icons/bold-arrow-down-right.svg') center/contain no-repeat; /* center/contain - это пара position и size, означает - по центру и заполнить все свободное пространство с сохранением пропорции изображения */
 }
 
 .banner-title {
-  font-size: 360px;
+  font-size: min(18.75vw, 360px);
   line-height: 1; /* 50px */
 }
 
@@ -242,15 +242,19 @@ h6 {
   border-color: var(--color-light-gray);
 }
 
-/*---------- MEDIA QUIRES ----------*/
+/*-------------------- MEDIA QUIRES --------------------*/
 
 /*----- 1024 px -----*/
 @media (max-width: 1024px) {
   .header {
     flex-wrap: wrap;
     padding-top: 20px;
-    padding-inline: 15px;
     row-gap: 10px;
+  }
+
+  .header,
+  .banner {
+    padding-inline: 15px;
   }
 
   .header-menu {
