@@ -170,6 +170,78 @@ h6 {
   box-shadow: 16px 0 0 currentColor;
 }
 
+/*--------------------- Banner ---------------------*/
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: end; /* прижимаем внутренний контент к низу */
+  padding: 36px 70px;
+  min-height: 985px;
+  color: var(--color-light-gray);
+  background-color: var(--color-dark-alternate);
+}
+
+.banner-body {
+  text-transform: uppercase;
+}
+
+.banner-info {
+  display: flex;
+  align-items: end;
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 700;
+}
+
+.banner-info::before {
+  content: '';
+  width: 194px;
+  aspect-ratio: 1;
+  margin-right: 30px;
+  background: url('../icons/bold-arrow-down-right.svg') center/contain no-repeat; /* center/contain - это пара position и size, означает - по центру и заполнить все свободное пространство с сохранением пропорции изображения */
+}
+
+.banner-title {
+  font-size: 360px;
+  line-height: 1; /* 50px */
+}
+
+.banner-pagination-list {
+  display: flex;
+  justify-content: center;
+}
+
+.banner-pagination-item {
+  display: flex;
+}
+
+.banner-pagination-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  background-color: transparent;
+  border: none;
+}
+
+/* круглые кнопки для пагинации */
+.banner-pagination-button::after {
+  content: '';
+  width: 10px;
+  aspect-ratio: 1;
+  border: var(--border);
+  border-radius: 50%;
+  transition-duration: var(--transition-duration);
+}
+
+.banner-pagination-button.is-current::after {
+  background-color: var(--color-light);
+}
+
+.banner-pagination-button:not(.is-current):hover::after {
+  border-color: var(--color-light-gray);
+}
+
 /*---------- MEDIA QUIRES ----------*/
 
 /*----- 1024 px -----*/
