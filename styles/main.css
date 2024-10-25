@@ -86,3 +86,25 @@ h6 {
   line-height: 1.3;
   color: var(--color-light);
 }
+
+.backdrop-title {
+  position: relative;
+  z-index: 2;
+}
+
+.backdrop-title::before {
+  content: '';
+  display: block; /* обязательно указать display: block; иначе иконка будет не видна */
+  position: absolute;
+  right: calc(100% + 8px); /* это правило означает left: -8px; */
+  width: 26px;
+  aspect-ratio: 1;
+  background: url('../icons/plus.svg') center/contain no-repeat;
+}
+
+.backdrop-title::after {
+  content: attr(
+    data-title
+  ); /* атрибут data-title указан в html разметке, это правило позволяет получить значение из атрибута */
+  /* color: red; */
+}
