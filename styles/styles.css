@@ -16,6 +16,8 @@
   --container-width: 1300px;
   --container-padding-x: 15px; /* для горизонтальных внутренних отступов, чтобы при уменьшения ширины экрана контент не слипался с краями */
   --transition-duration: 0.2s;
+
+  --header-height: 90px;
 }
 
 body {
@@ -103,6 +105,7 @@ h6 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: var(--header-height);
   column-gap: 20px;
   padding-inline: 32px; /* отступы по краям у шапки, чтобы контент при сужении экрана не слипался с краями */
   background-color: var(--color-dark-alternate);
@@ -122,7 +125,7 @@ h6 {
   display: inline-flex; /* для того, чтобы у ссылок была область нажатия равная 90px (высота указана в этом классе) пишем это правило */
   align-items: center;
   column-gap: 7px; /* расстояние от кружочка до пункта навигационного меню HOME */
-  height: 90px;
+  height: var(--header-height);
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
@@ -176,7 +179,7 @@ h6 {
   flex-direction: column;
   justify-content: end; /* прижимаем внутренний контент к низу */
   padding: 36px 70px;
-  min-height: 985px;
+  min-height: calc(100vh - var(--header-height));
   color: var(--color-light-gray);
   background-color: var(--color-dark-alternate);
 }
@@ -191,13 +194,14 @@ h6 {
   font-size: clamp(16px, 1.56vw, 30px);
   line-height: 1.27; /* 1.27 */
   font-weight: 700;
+  margin-bottom: 5px;
 }
 
 .banner-info::before {
   content: '';
-  width: min(10.1vw, 194px);
+  width: clamp(60px, 10.1vw, 194px);
   aspect-ratio: 1;
-  margin-right: 30px;
+  margin-right: 10px;
   background: url('../icons/bold-arrow-down-right.svg') center/contain no-repeat; /* center/contain - это пара position и size, означает - по центру и заполнить все свободное пространство с сохранением пропорции изображения */
 }
 
@@ -264,6 +268,10 @@ h6 {
 
   .header-menu-link {
     height: 50px;
+  }
+
+  .banner {
+    row-gap: 10px;
   }
 }
 
