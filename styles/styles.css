@@ -1,86 +1,3 @@
-:root {
-  --color-dark: #000000;
-  --color-dark-alternate: #131619;
-  --color-light: #ffffff;
-  --color-dark-gray: #404040;
-  --color-light-gray: #c4c4c4;
-
-  --border-radius: 30px;
-  --border: 1px solid var(--color-light);
-
-  --font-family-base: 'Heebo', sans-serif;
-  --font-family-accent: 'Yantramanav', sans-serif;
-
-  --input-height: 54px;
-
-  --container-width: 1300px;
-  --container-padding-x: 15px; /* для горизонтальных внутренних отступов, чтобы при уменьшения ширины экрана контент не слипался с краями */
-  --transition-duration: 0.2s;
-
-  --header-height: 90px;
-}
-
-body {
-  font-family: var(--font-family-base);
-  color: var(--color-light-gray);
-  background-color: var(--color-dark);
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 1.75; /* 28px */
-}
-
-a,
-button,
-input,
-textarea,
-svg * {
-  transition-duration: var(
-    --transition-duration
-  ); /* все дочерние элементы внутри svg */
-}
-
-a {
-  color: var(--color-light); /* цвет для всех ссылок */
-}
-
-a:hover {
-  color: var(--color-light-gray);
-}
-
-.container {
-  max-width: calc(
-    var(--container-width) + var(--container-padding-x) * 2
-  ); /* складываем ширину контентной сетки со значением внутренних горизонтальных отступов умноженное на 2, получаем ограничение ширины контентной сетки в 1300px, которая указана в переменной --container-width */
-  margin-inline: auto; /* центрирование контента */
-  padding-inline: var(
-    --container-padding-x
-  ); /* внутренний горизонтальный отступ */
-}
-
-/* скрытие элементов */
-.visually-hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  margin: -1px !important;
-  border: 0 !important;
-  padding: 0 !important;
-  white-space: nowrap !important;
-  clip-path: inset(100%) !important;
-  clip: rect(0 0 0 0) !important;
-  overflow: hidden !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
 .button {
   display: inline-flex; /* это правило позволяет применить свойство высоты height */
   align-items: center;
@@ -245,6 +162,37 @@ h6 {
 .banner-pagination-button:not(.is-current):hover::after {
   border-color: var(--color-light-gray);
 }
+
+/*---------- Motivation ----------*/
+.motivation-item:nth-child(even) {
+  background-color: var(--color-dark-alternate);
+}
+
+.motivation-item:nth-child(even) .motivation-card {
+  flex-direction: row-reverse;
+}
+
+.motivation-card {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  column-gap: clamp(30px, 10.42vw, 200px);
+}
+
+.motivation-card-image {
+  margin-block: -60px; /* смещение элемента card-image */
+}
+
+.motivation-card-body {
+  padding-left: 35px;
+}
+
+/*----------  ----------*/
+/*----------  ----------*/
+/*----------  ----------*/
+/*----------  ----------*/
+/*----------  ----------*/
+/*----------  ----------*/
 
 /*-------------------- MEDIA QUIRES --------------------*/
 
