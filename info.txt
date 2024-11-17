@@ -2,6 +2,9 @@ video url:
 
 https://www.youtube.com/watch?v=AUdW01JQFME&list=PL0MUAHwery4pP3XMpzDIMirWRS28ffD_x
 
+github repo:
+https://github.com/stars/sergeybabann/lists/layout-learn
+
 -------------------- #1 --------------------
 #1 - 30.40(десктопная версия шапки готова)
 #1 - 30.44(начинаем делать адаптив)
@@ -15,9 +18,9 @@ https://www.youtube.com/watch?v=AUdW01JQFME&list=PL0MUAHwery4pP3XMpzDIMirWRS28ff
 #3 - секция motivation 
 
 ----- video stop -----
-#3 - 14.42
+#3 - 24.00
 
-github (сделал промежуточное сохранение в github)
+github push - section motivation desktop version complete
 
 
 
